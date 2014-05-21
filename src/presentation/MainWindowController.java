@@ -158,9 +158,16 @@ public class MainWindowController implements Initializable {
 	     mainView.setPreserveRatio(true);
 	     mainView.setSmooth(true);
 	     mainView.setCache(true);   
+	     int porog = 3; // три точки порог
+	     String out_str="";
+	     if (sc.getResultOfMatching()>porog)
+	         out_str="Ёмблема и изображение совпадают";
+	     else
+	    	 out_str="Ёмблема и изображение не совпадают";
+	     final String out=out_str;
 	     Thread t = new Thread(new Runnable(){
 	         public void run(){
-	        	  JOptionPane.showMessageDialog(null,    sc.matchesInfo());
+	        	  JOptionPane.showMessageDialog(null,    out);
 	         }
 	     });
 	   t.start();

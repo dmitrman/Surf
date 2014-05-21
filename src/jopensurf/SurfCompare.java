@@ -206,11 +206,26 @@ public class SurfCompare extends JPanel {
     public String matchesInfo(){
     //  Map<SURFInterestPoint,SURFInterestPoint> pointsA = mSurfA.getMatchingPoints(mSurfB,true);
   //    Map<SURFInterestPoint,SURFInterestPoint> pointsB = mSurfB.getMatchingPoints(mSurfA,true);
-     String s1=("Between carImage and emblemImage there are: " + mAMatchingPoints.size() + " matching points of " + mSurfA.getUprightInterestPoints().size());
+      String s1=("Between carImage and emblemImage there are: " + mAMatchingPoints.size() + " matching points of " + mSurfA.getUprightInterestPoints().size());
       String s2=("Between emblemImage and carImage there are: " + mBMatchingPoints.size() + " matching points of " + mSurfB.getUprightInterestPoints().size());
       return (s1+"\n"+s2);
     }
     
+    public float getResultOfMatching(){
+    	int total_emblem= mSurfB.getUprightInterestPoints().size();
+    	int total_car= mSurfA.getUprightInterestPoints().size();
+    	
+    	int positive_emblem=mAMatchingPoints.size();
+    	int positive_car=mBMatchingPoints.size();
+    	
+        float min= (total_emblem<total_car)?total_emblem:total_car;
+        float max=(positive_emblem>positive_car)?positive_emblem:positive_car;
+        
+        //System.out.println(min+" "+max+" "+" | "+total_emblem+" "+total_car+"|"+positive_emblem+" "+positive_car);
+        
+        
+        return (positive_emblem+positive_car);
+    }
     /*public static void main(String[] args) throws IOException {
         BufferedImage imageA = ImageIO.read(new File("C:\\Emb\\Honda.jpg"));
         BufferedImage imageB = ImageIO.read(new File("C:\\Avto\\Honda.JPG"));
