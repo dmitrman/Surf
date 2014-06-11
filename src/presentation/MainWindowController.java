@@ -175,9 +175,9 @@ public class MainWindowController implements Initializable {
 		int porog = 3; // три точки порог
 		String out_str = "";
 		if (sc.getResultOfMatching() > porog)
-			out_str = "Ёмблема и изображение совпадают";
+			out_str = "јвто и логотип совпадают";
 		else
-			out_str = "Ёмблема и изображение не совпадают";
+			out_str = "јвто и логотип не совпадают";
 		final String out = out_str;
 		Thread t = new Thread(new Runnable() {
 			public void run() {
