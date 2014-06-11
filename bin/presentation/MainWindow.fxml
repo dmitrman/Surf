@@ -50,17 +50,17 @@
           <items>
             <MenuItem mnemonicParsing="false" text="Threshold">
               <graphic>
-                <TextField prefWidth="200.0" />
+                <TextField fx:id="threshold" onMouseExited="#thresholdClick" prefWidth="200.0" text="0.001" />
               </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" text="Octaves">
               <graphic>
-                <TextField prefWidth="200.0" />
+                <TextField fx:id="octaves" onMouseExited="#octavesClick" prefWidth="200.0" text="5" />
               </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" text="Balance">
               <graphic>
-                <TextField prefWidth="200.0" />
+                <TextField fx:id="balance" onMouseExited="#balanceClick" prefWidth="200.0" text="0.81" />
               </graphic>
             </MenuItem>
           </items>
